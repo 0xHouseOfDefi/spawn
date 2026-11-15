@@ -15,7 +15,8 @@
   },
   "files": [
     "dist",
-    "docs"
+    "docs",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "test": "vitest run",
@@ -28,6 +29,7 @@
     "@pump-fun/pump-sdk": "2.0.0",
     "@solana/spl-token": "0.4.15",
     "@solana/web3.js": "1.99.0",
+    "bigint-buffer": "file:packages/bigint-buffer",
     "bs58": "6.0.0",
     "buffer": "6.0.3"
   },
@@ -35,15 +37,17 @@
     "@types/node": "24.10.1",
     "esbuild": "0.25.12",
     "typescript": "5.9.3",
-    "vitest": "4.1.11"
+    "vitest": "4.1.12"
   },
   "overrides": {
     "@coral-xyz/anchor": {
       "toml": "5.0.1"
     },
-    "jayson": {
-      "uuid": "11.1.1"
-    }
+    "bigint-buffer": "$bigint-buffer",
+    "jayson": "5.0.0"
+  },
+  "engines": {
+    "node": ">=24"
   },
   "license": "Apache-2.0"
 }

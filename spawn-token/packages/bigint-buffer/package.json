@@ -1,0 +1,16 @@
+{
+  "name": "bigint-buffer",
+  "version": "1.1.6",
+  "private": true,
+  "description": "In-repo pure JavaScript substitute for unmaintained bigint-buffer 1.1.5. It is not an upstream release. The native binding and its buffer overflow are not included.",
+  "license": "Apache-2.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "engines": {
+    "node": ">=24"
+  }
+}
