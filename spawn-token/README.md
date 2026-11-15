@@ -2,7 +2,7 @@
 
 Token launch preparation, wallet boundaries, and finalized receipt verification for SPAWN.
 
-SPAWN-owned source in this package is Apache-2.0. Third-party notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) (same text as the repository root copy).
+SPAWN-owned source in this package is Apache-2.0. Copyright 2026 SPAWN. See [NOTICE](NOTICE). Third-party notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) (same text as the repository root copy).
 
 Node.js `>=24`. Node 22 is outside `engines`.
 

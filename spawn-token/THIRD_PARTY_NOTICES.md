@@ -10,17 +10,25 @@ The git tree contains source, tests, the Apache-2.0 license, docs, and one in-re
 
 Test fixtures are synthetic. They are not copied artwork or production account data.
 
-## Needs a human decision
+## Accepted third-party terms
 
-### `rpc-websockets@9.3.9` — LGPL-3.0-only
+The copyright holder (SPAWN) accepted the following on 2026-11-15. SPAWN-owned source stays Apache-2.0. See `NOTICE` and `LICENSE`. None of these packages are relicensed.
 
-Production transitive dependency of `@solana/web3.js@1.99.0` (`rpc-websockets` `^9.0.2`). The published 7.x, 9.x, and 10.x lines checked on the npm registry are also LGPL-3.0-only, so an override to another version does not change the license. Replacing `@solana/web3.js` 1.x would change the SDK API, so it was not replaced.
+### `rpc-websockets@9.3.9` — LGPL-3.0-only, unmodified transitive dependency
 
-LGPL-3.0-only is redistributable, but it is not the Apache-2.0 license used for SPAWN-owned source. Shipping this repository does not relicense `rpc-websockets`. Downstream users who distribute a combined work need to keep the LGPL-3.0 terms for that package (license text, and the ability to replace the library). No modified copy of `rpc-websockets` is vendored here.
+Accepted. This package is a production dependency of `@solana/web3.js@1.99.0` (`rpc-websockets` `^9.0.2`). It is not vendored in this repository and it is not modified. Node loads the copy installed from the npm registry when `@solana/web3.js` requires it. That is dynamic, unmodified use.
 
-### Copyright holder line
+The published 7.x, 9.x, and 10.x lines on npm are also LGPL-3.0-only. Replacing `@solana/web3.js` 1.x would change the SDK API, so the dependency stays.
 
-`LICENSE` is the standard Apache License 2.0 text, including the appendix template with bracket placeholders. Package metadata and the README already select Apache-2.0. This repository does not add a NOTICE that names a copyright owner.
+LGPL-3.0-only is not Apache-2.0. This repository does not relicense `rpc-websockets`. Anyone who distributes a combined work must keep the LGPL-3.0-only terms for that package, including its license text. Users may replace the installed package (for example with an npm override or by substituting another install that satisfies the same import) without changing SPAWN-owned source.
+
+### SPDX license fields, no LICENSE file in the tarball
+
+Accepted. These packages declare a license in `package.json` and do not ship a separate license file. The SPDX identifier is the grant this repository relies on. A LICENSE file was not in the npm tarball. For `@pump-fun/pump-sdk`, `https://raw.githubusercontent.com/pump-fun/pump-sdk/main/LICENSE` and the `master` equivalent returned 404 on 2026-11-15.
+
+- `@pump-fun/pump-sdk@2.0.0` — MIT
+- `@pump-fun/pump-swap-sdk@1.20.0` — MIT
+- `@coral-xyz/anchor@0.31.1` — (MIT OR Apache-2.0)
 
 ### Development-only MPL-2.0
 
@@ -34,7 +42,7 @@ Transitive dependency of `borsh`. `package.json` has no `license` field, so the 
 
 ### `bigint-buffer@1.1.6` — in-repo substitute
 
-Not the npm package `bigint-buffer@1.1.5`. See `docs/dependency-audit.md`. License Apache-2.0. Located at `spawn-token/packages/bigint-buffer`.
+Not the npm package `bigint-buffer@1.1.5`. See the repository file `docs/dependency-audit.md`. License Apache-2.0, Copyright 2026 SPAWN. Located at `spawn-token/packages/bigint-buffer`. The copyright holder chose to keep this substitute.
 
 ### Direct dependencies
 
@@ -46,9 +54,7 @@ Not the npm package `bigint-buffer@1.1.5`. See `docs/dependency-audit.md`. Licen
 - `bs58@6.0.0` — MIT (license file: LICENSE)
 - `buffer@6.0.3` — MIT (license file: LICENSE)
 
-`@pump-fun/pump-sdk` declares MIT. A LICENSE file was not in the npm tarball, and `https://raw.githubusercontent.com/pump-fun/pump-sdk/main/LICENSE` and the `master` equivalent returned 404 on 2026-11-15. Clearance is the SPDX `MIT` field on the published package. The same SPDX-only pattern applies to other rows above that say they have no LICENSE file.
-
-`@pump-fun/agent-payments-sdk@1.0.7` optionally depends on `@rollup/rollup-linux-x64-gnu`. That optional package is MIT. It is a Rollup native binary pulled in by the payments SDK, not an asset added by this repository.
+`@pump-fun/agent-payments-sdk@1.0.7` (ISC) optionally depends on `@rollup/rollup-linux-x64-gnu`. That optional package is MIT. It is a Rollup native binary pulled in by the payments SDK, not an asset added by this repository. The SPDX-only acceptance above covers pump-sdk, pump-swap-sdk, and Anchor.
 
 
 ## Production packages

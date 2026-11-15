@@ -1,4 +1,5 @@
 'use strict';
+// Copyright 2026 SPAWN
 // SPDX-License-Identifier: Apache-2.0
 
 // Pure JavaScript stand-in for bigint-buffer. Upstream 1.1.5 has no patched

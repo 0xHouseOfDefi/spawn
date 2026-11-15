@@ -2,7 +2,7 @@
 
 This repository is the SPAWN token SDK (`spawn-token`, package `@spawn/token`). It is not the rest of the SPAWN platform.
 
-SPAWN-owned source is Apache-2.0. See `LICENSE`. By submitting a contribution you agree that it is licensed under Apache-2.0. There is no separate contributor license agreement in this repository.
+SPAWN-owned source is Apache-2.0. Copyright 2026 SPAWN. See `LICENSE` and `NOTICE`. By submitting a contribution you agree that it is licensed under Apache-2.0. There is no separate contributor license agreement in this repository.
 
 ## Requirements
 

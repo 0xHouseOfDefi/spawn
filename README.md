@@ -2,9 +2,7 @@
 
 This repository is the SPAWN token SDK (`spawn-token`, npm name `@spawn/token`). It is not the complete SPAWN application.
 
-SPAWN-owned source is licensed under [Apache-2.0](LICENSE). Third-party packages keep their own licenses. The inventory is [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-`LICENSE` is the standard Apache License 2.0 text, including the appendix template. A copyright owner is not named in a NOTICE file.
+SPAWN-owned source is licensed under [Apache-2.0](LICENSE). Copyright 2026 SPAWN. See [NOTICE](NOTICE). Third-party packages keep their own licenses. The inventory is [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The package is `"private": true`, so npm will not publish it until a maintainer removes that flag.
 
@@ -24,9 +22,9 @@ Verified on 2026-11-15: 257 tests pass on Node 24.22.3 and Node 26.13.1. `npm au
 
 ## Before treating this as public
 
-Read [docs/cloudflare-builds.md](docs/cloudflare-builds.md). This repository has no deploy config. Cloudflare dashboard settings are not visible from git and still have to be confirmed.
+Read [docs/cloudflare-builds.md](docs/cloudflare-builds.md). This repository has no deploy config. Cloudflare dashboard settings are not visible from git and still have to be confirmed by someone with account access.
 
-One production dependency, `rpc-websockets@9.3.9`, is LGPL-3.0-only through `@solana/web3.js`. That needs an explicit maintainer decision. It is described in the third-party notices.
+`rpc-websockets` is an accepted unmodified LGPL-3.0-only dependency of `@solana/web3.js`. See the third-party notices.
 
 ## Project docs
 

@@ -1,0 +1,17 @@
+SPAWN token SDK
+Copyright 2026 SPAWN
+
+This product includes software developed by SPAWN.
+
+SPAWN-owned source is licensed under the Apache License, Version 2.0.
+The license text is in LICENSE. The appendix of that file carries:
+
+    Copyright 2026 SPAWN
+
+Third-party packages keep their own licenses. They are listed in
+THIRD_PARTY_NOTICES.md, which is part of this distribution.
+
+rpc-websockets is used only as an unmodified transitive dependency of
+@solana/web3.js. It remains under the GNU Lesser General Public License
+version 3.0 only. It is not vendored and it is not modified. Users may
+replace the installed copy.

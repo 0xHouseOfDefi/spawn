@@ -12,9 +12,13 @@ The package is `"private": true` and is not published to npm from this repositor
 
 ## Reporting a vulnerability
 
-Report vulnerabilities through GitHub private vulnerability reporting on [Spawn-Backrooms/spawn](https://github.com/Spawn-Backrooms/spawn) (Security → Advisories → Report a vulnerability).
+Report security issues through GitHub private vulnerability reporting:
 
-Maintainers have to enable private vulnerability reporting in the repository settings before that form accepts reports. Until that switch is on, there is no public email address in this repository for security reports. Do not open a public issue for a vulnerability, and do not send secrets, keys, or live RPC URLs.
+https://github.com/Spawn-Backrooms/spawn/security/advisories/new
+
+Use Security → Advisories → Report a vulnerability on [Spawn-Backrooms/spawn](https://github.com/Spawn-Backrooms/spawn). Do not open a public issue for a vulnerability, and do not include secrets, keys, or live RPC URLs.
+
+A repository admin has to enable private vulnerability reporting (Settings → Advanced Security → Private vulnerability reporting) before that form accepts reports. This repository does not publish a separate security email.
 
 ## What this SDK does not hold
 
