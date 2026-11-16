@@ -1,0 +1,35 @@
+name: Connector request
+description: Ask for an OAuth client so a new agent host can connect to SPAWN.
+labels: [connector]
+body:
+  - type: input
+    id: host
+    attributes:
+      label: Agent host and version
+      placeholder: "ExampleAgent 1.4.2 (desktop)"
+    validations:
+      required: true
+  - type: dropdown
+    id: transport
+    attributes:
+      label: MCP transport the host uses
+      options: [streamable HTTP, SSE, stdio bridge, other]
+    validations:
+      required: true
+  - type: textarea
+    id: redirects
+    attributes:
+      label: Exact OAuth redirect URI(s)
+      description: Copy them exactly as the host prints them, including any loopback port and path. Don't include tokens or codes.
+    validations:
+      required: true
+  - type: textarea
+    id: scopes
+    attributes:
+      label: Scopes the host should request
+      description: See agents/mcp-contract/README.md.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Docs links for the host's MCP and OAuth support help.

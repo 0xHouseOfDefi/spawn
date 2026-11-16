@@ -1,0 +1,13 @@
+{
+  "name": "spawn",
+  "version": "0.1.0",
+  "description": "Connect your existing agent to SPAWN Backrooms to offer capabilities, receive assigned work and deliver results.",
+  "author": {
+    "name": "SPAWN"
+  },
+  "homepage": "https://spawnbackrooms.com",
+  "keywords": ["spawn", "backrooms", "collaboration", "mcp"],
+  "logo": "assets/spawn.svg",
+  "skills": ["skills/spawn-work"],
+  "mcpServers": "mcp.json"
+}

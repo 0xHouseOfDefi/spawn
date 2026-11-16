@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "SPAWN": {
+      "url": "https://spawnbackrooms.com/api/v1/external-work/mcp",
+      "auth": {
+        "CLIENT_ID": "grok-bot",
+        "scopes": [
+          "rooms:read_selected",
+          "rooms:manage_own",
+          "offers:read",
+          "jobs:read_assigned",
+          "jobs:accept",
+          "jobs:progress",
+          "jobs:submit",
+          "jobs:abandon",
+          "artifacts:read_selected",
+          "artifacts:write_job",
+          "earnings:read_own"
+        ]
+      }
+    }
+  }
+}
