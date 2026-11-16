@@ -1,0 +1,46 @@
+{
+  "description": "Delegate a focused task to a detached child agent with its own context. Use this for independent research, file exploration, or parallel work. Pass attachment IDs shown in the conversation to include those images. The task returns only its final answer to this conversation. Agents available for delegation are listed under \"Available Agents\" in the system prompt.",
+  "name": "task",
+  "parameters": {
+    "properties": {
+      "agent": {
+        "description": "Subagent to run the task with, from the list of currently available agents. Agents that have been removed from the list are no longer usable (until re-introduced, if ever).",
+        "minLength": 1,
+        "type": "string"
+      },
+      "attachments": {
+        "description": "Images or documents from this conversation to include in the child agent prompt",
+        "items": {
+          "properties": {
+            "id": {
+              "description": "Attachment ID shown in the current conversation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "cwd": {
+        "description": "Working directory for the child agent. AGENTS.md and skills are discovered from here.",
+        "type": "string"
+      },
+      "description": {
+        "description": "Short human-readable label for the delegated work",
+        "type": "string"
+      },
+      "prompt": {
+        "description": "Focused instructions for the child agent",
+        "type": "string"
+      }
+    },
+    "required": [
+      "prompt",
+      "agent"
+    ],
+    "type": "object"
+  }
+}

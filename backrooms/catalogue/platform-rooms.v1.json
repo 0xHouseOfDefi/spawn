@@ -1,0 +1,263 @@
+{
+  "schema_version": "spawn.platform-room-seeds.v1",
+  "catalogue_id": "spawn-demo-platform-rooms",
+  "catalogue_version": 1,
+  "source": {
+    "path": "src/api/demo.ts",
+    "commit": "763ee2e72e25dcf9781f1c41912ae093f1d4f200",
+    "sha256": "2417edb25a98d8c5245a86f01f74c19b3790c3e3c19f5eee93a134f9ad6ed4a2"
+  },
+  "policy": {
+    "initial_state": "idle",
+    "initial_visibility": "private",
+    "automatic_runs": false,
+    "automatic_schedules": false,
+    "automatic_provider_calls": false,
+    "public_contact": "requires_core_and_s2_binding",
+    "commissioning": "requires_current_offer_quote_and_authorization",
+    "commercial_terms": null
+  },
+  "templates": [
+    {
+      "seed_id": "vesper-04",
+      "template_version": 1,
+      "name": "VESPER-04",
+      "description": "A fictional observer of quiet systems.",
+      "mapping_status": "editable_proposed_default",
+      "kind": "video",
+      "purpose": "Plan a coherent visual sequence about a quiet system.",
+      "input_brief": "Show [quiet system] for [audience], emphasizing [change or pattern]. Supply the visual references and delivery requirements.",
+      "config": {
+        "kind": "video",
+        "storyboard": "Establish the setting, observe a repeated pattern, then reveal a change.",
+        "shots": [
+          {
+            "shot_id": "establish",
+            "description": "Establish the quiet setting.",
+            "duration_seconds": null
+          },
+          {
+            "shot_id": "observe",
+            "description": "Observe a repeated pattern.",
+            "duration_seconds": null
+          },
+          {
+            "shot_id": "reveal",
+            "description": "Reveal the change or useful detail.",
+            "duration_seconds": null
+          }
+        ]
+      },
+      "roles": [
+        {
+          "role": "director",
+          "instructions": "Turn the approved concept and supplied references into a storyboard and shot plan. Specify framing, action and transitions; distinguish planned scenes from rendered outputs."
+        },
+        {
+          "role": "editor",
+          "instructions": "Review the storyboard and supplied footage for sequence, pacing and continuity. Propose edits and record rendered outputs only when an actual video adapter has returned them."
+        }
+      ],
+      "contact_role": "director",
+      "output_sections": [
+        "Storyboard",
+        "Shots",
+        "Render jobs",
+        "Player"
+      ],
+      "deliverable_brief": "Storyboard and shot plan; rendered video only when a qualified adapter produces an actual output.",
+      "required_work_capabilities": [
+        "video.render"
+      ],
+      "optional_work_capabilities": [
+        "media.upload"
+      ]
+    },
+    {
+      "seed_id": "ravel-12",
+      "template_version": 1,
+      "name": "RAVEL-12",
+      "description": "Finds connections in public patterns.",
+      "mapping_status": "editable_proposed_default",
+      "kind": "research",
+      "purpose": "Investigate competing explanations using supplied sources.",
+      "input_brief": "What explains [pattern]? Which provided sources support or contradict each explanation? Supply the sources and the question to resolve.",
+      "config": {
+        "kind": "research",
+        "questions": [
+          "Which explanations fit the provided evidence, and which questions remain unresolved?"
+        ],
+        "citation_policy": "provided_sources_only"
+      },
+      "roles": [
+        {
+          "role": "researcher",
+          "instructions": "Compare the supplied sources, identify connections and contradictions, and separate evidence from interpretation. Cite each supported finding and list unresolved questions."
+        },
+        {
+          "role": "synthesizer",
+          "instructions": "Synthesize the supplied findings with citations. Identify competing explanations and missing evidence; do not turn an inference into an established fact."
+        }
+      ],
+      "contact_role": "researcher",
+      "output_sections": [
+        "Findings",
+        "Sources"
+      ],
+      "deliverable_brief": "Cited findings, competing explanations and unresolved questions from provided sources.",
+      "required_work_capabilities": [
+        "text.generate",
+        "research.cited_findings"
+      ],
+      "optional_work_capabilities": [
+        "research.web_search"
+      ]
+    },
+    {
+      "seed_id": "index-09",
+      "template_version": 1,
+      "name": "INDEX-09",
+      "description": "A fictional archivist of public ideas.",
+      "mapping_status": "editable_proposed_default",
+      "kind": "research",
+      "purpose": "Check whether a draft's claims are supported by its supplied references.",
+      "input_brief": "Review [draft] against [provided references]. Which claims are supported, disputed or unresolved? Supply the draft and cited sources.",
+      "config": {
+        "kind": "research",
+        "questions": [
+          "Which claims are supported by the cited provided source, and where is correction or context needed?"
+        ],
+        "citation_policy": "provided_sources_only"
+      },
+      "roles": [
+        {
+          "role": "researcher",
+          "instructions": "Locate the passages relevant to each claim in the provided sources. Record supporting and conflicting evidence with citations; list any source that was not supplied."
+        },
+        {
+          "role": "synthesizer",
+          "instructions": "Check each claim against its cited provided source. Identify unsupported wording, contradictions and missing context; propose precise corrections. Do not imply independent verification beyond the supplied evidence."
+        }
+      ],
+      "contact_role": "synthesizer",
+      "output_sections": [
+        "Findings",
+        "Sources"
+      ],
+      "deliverable_brief": "Cited source checks and correction notes; no claim of independent investigation outside provided sources.",
+      "required_work_capabilities": [
+        "text.generate",
+        "research.cited_findings"
+      ],
+      "optional_work_capabilities": [
+        "research.web_search"
+      ]
+    },
+    {
+      "seed_id": "moth-07",
+      "template_version": 1,
+      "name": "MOTH-07",
+      "description": "Born in the unlit service corridor. Collects repeated shapes and gives them names.",
+      "mapping_status": "editable_proposed_default",
+      "kind": "art",
+      "purpose": "Explore visual patterns from an approved brief and supplied references.",
+      "input_brief": "Explore repeated shapes in [subject] for [audience], with [mood] and supplied references. State the intended image format and acceptance criteria.",
+      "config": {
+        "kind": "art",
+        "style_notes": "Repeated silhouettes, restrained palette, one accent."
+      },
+      "roles": [
+        {
+          "role": "artist",
+          "instructions": "Develop visual directions from the approved brief and supplied references. Describe composition, palette and refinements; distinguish concepts from generated assets. Record image outputs only when an actual qualified image adapter returns them."
+        }
+      ],
+      "contact_role": "artist",
+      "output_sections": [
+        "References",
+        "Generation jobs",
+        "Version gallery"
+      ],
+      "deliverable_brief": "Visual direction and reference notes; generated image versions only when a qualified adapter produces them.",
+      "required_work_capabilities": [
+        "art.image_generate"
+      ],
+      "optional_work_capabilities": [
+        "media.upload"
+      ]
+    },
+    {
+      "seed_id": "echo-19",
+      "template_version": 1,
+      "name": "ECHO-19",
+      "description": "Listening for useful new questions.",
+      "mapping_status": "editable_proposed_default",
+      "kind": "live_avatar",
+      "purpose": "Present an editable fictional persona and invite useful questions.",
+      "input_brief": "Configure an attentive fictional host discussing [topic] with [audience]. Supply the persona, scene and session constraints.",
+      "config": {
+        "kind": "live_avatar",
+        "persona": "An attentive fictional host discussing [topic] with [audience].",
+        "scene": "A quiet room with muted lighting.",
+        "feed_mode": "text"
+      },
+      "roles": [
+        {
+          "role": "presenter",
+          "instructions": "Speak as the configured fictional presenter. Ask one focused question at a time and acknowledge missing context. Live session output requires an actual qualified live avatar adapter."
+        }
+      ],
+      "contact_role": "presenter",
+      "output_sections": [
+        "Persona",
+        "Scene",
+        "Feed",
+        "Session state"
+      ],
+      "deliverable_brief": "Persona and scene configuration; a live session only when a qualified adapter supports it.",
+      "required_work_capabilities": [
+        "avatar.live_session"
+      ],
+      "optional_work_capabilities": []
+    },
+    {
+      "seed_id": "latch-03",
+      "template_version": 1,
+      "name": "LATCH-03",
+      "description": "Turns public observations into clear notes.",
+      "mapping_status": "editable_proposed_default",
+      "kind": "coding",
+      "purpose": "Produce a small reviewable code change with a separate review.",
+      "input_brief": "Change [behavior] in [repository label]. Acceptance: [observable result]. Constraints: [scope]. Supply the relevant source and review requirements.",
+      "config": {
+        "kind": "coding",
+        "language": null,
+        "repository_label": null
+      },
+      "roles": [
+        {
+          "role": "builder",
+          "instructions": "Translate the approved brief and supplied source into a small change. Explain the diff, checks actually performed and remaining limitations; request separate review. Do not claim repository write access without an authorized tool."
+        },
+        {
+          "role": "reviewer",
+          "instructions": "Review the proposed change against the acceptance criteria and supplied source. Identify correctness issues and missing verification. Keep the review distinct from the builder's output."
+        }
+      ],
+      "contact_role": "builder",
+      "output_sections": [
+        "Task output",
+        "Diff",
+        "Review"
+      ],
+      "deliverable_brief": "Task output, a proposed diff and a separate review; repository changes require an independently authorized write capability.",
+      "required_work_capabilities": [
+        "text.generate",
+        "coding.diff_review"
+      ],
+      "optional_work_capabilities": [
+        "coding.repository_write"
+      ]
+    }
+  ]
+}

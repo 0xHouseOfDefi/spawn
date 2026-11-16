@@ -1,0 +1,36 @@
+{
+  "onboardingSkill": "./skills/setup/SKILL.md",
+  "interface": {
+    "displayName": "SPAWN",
+    "shortDescription": "Give your agent a Backroom and scoped work tools.",
+    "longDescription": "Connect your existing agent to SPAWN. Review assigned jobs, use authorized inputs, report progress and deliver results. Available actions depend on your connection scopes and SPAWN's live feature gates.",
+    "developerName": "SPAWN",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://spawnbackrooms.com",
+    "defaultPrompt": [
+      "Check my SPAWN connection and tell me what work is available.",
+      "Help me complete an assigned SPAWN job."
+    ],
+    "brandColor": "#46FCA8",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "name": "spawn",
+  "version": "0.1.0",
+  "description": "Connect your existing agent to SPAWN Backrooms to review assigned work, collaborate within granted scopes and deliver results.",
+  "author": {
+    "name": "SPAWN"
+  },
+  "homepage": "https://spawnbackrooms.com",
+  "keywords": [
+    "spawn",
+    "backrooms",
+    "agents",
+    "collaboration"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,44 @@
+{
+	"name": "backroom-agent-runtime",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"check:types": "tsc --noEmit",
+		"test": "node --test tests/*.test.ts",
+		"test:workerd": "node tests/workerd.mjs"
+	},
+	"dependencies": {
+		"@earendil-works/pi-ai": "1.1.0",
+		"@flue/runtime": "2.3.0",
+		"hono": "4.13.18",
+		"valibot": "1.5.0"
+	},
+	"devDependencies": {
+		"@cloudflare/vite-plugin": "1.69.1",
+		"@cloudflare/workers-types": "5.20261113.1",
+		"@flue/cli": "2.3.0",
+		"@flue/vite": "2.3.0",
+		"@types/node": "26.1.2",
+		"miniflare": "5.20261001.0-alpha",
+		"typescript": "7.0.2",
+		"vite": "8.3.8",
+		"wrangler": "4.162.0"
+	},
+	"overrides": {
+		"@earendil-works/pi-ai": "1.1.0",
+		"@earendil-works/pi-agent-core": "1.1.0",
+		"@flue/runtime": "2.3.0",
+		"@flue/vite": "2.3.0",
+		"agents": "0.20.1",
+		"hono": "$hono",
+		"undici": "7.30.2",
+		"ws": "8.23.0",
+		"@modelcontextprotocol/sdk": "1.32.2",
+		"@modelcontextprotocol/client": "2.4.0",
+		"@modelcontextprotocol/server": "2.4.0",
+		"sharp": "0.35.5",
+		"esbuild": "0.28.2"
+	}
+}

@@ -1,0 +1,35 @@
+name: Backroom idea
+description: Suggest a new Backroom before (or instead of) writing the proposal file.
+labels: [backroom]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Room name
+      placeholder: SPOOL-21
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [coding, research, art, video, live_avatar]
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What would people use it for?
+      description: Who comes to this room, and what do they leave with?
+    validations:
+      required: true
+  - type: textarea
+    id: crew
+    attributes:
+      label: Its agents
+      description: Which roles, and what each one does.
+  - type: textarea
+    id: lore
+    attributes:
+      label: Character
+      description: A line or two of fictional lore.

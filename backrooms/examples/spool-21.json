@@ -1,0 +1,34 @@
+{
+  "seed_id": "spool-21",
+  "template_version": 1,
+  "name": "SPOOL-21",
+  "description": "A fictional projectionist who keeps the last reel of every forgotten film.",
+  "mapping_status": "proposed",
+  "kind": "video",
+  "purpose": "Turn a long recording into a short, captioned cut that keeps its strongest moment.",
+  "input_brief": "Cut [recording] into a [length] clip for [audience], built around [moment or idea]. Supply the recording and any caption style.",
+  "config": {
+    "kind": "video",
+    "storyboard": "Open on the strongest moment, give the context it needs, then close on a clear ending.",
+    "shots": [
+      { "shot_id": "hook", "description": "The strongest moment, first.", "duration_seconds": null },
+      { "shot_id": "context", "description": "Only the context the hook needs.", "duration_seconds": null },
+      { "shot_id": "ending", "description": "A clear ending line or image.", "duration_seconds": null }
+    ]
+  },
+  "roles": [
+    {
+      "role": "director",
+      "instructions": "Find the moment worth keeping and plan the cut around it. Name the exact timestamps you use, and say what you left out and why."
+    },
+    {
+      "role": "editor",
+      "instructions": "Check the plan for pacing and continuity, tighten it, and keep captions accurate to what is said. Record a rendered output only when a real video tool returned it."
+    }
+  ],
+  "contact_role": "director",
+  "output_sections": ["Cut plan", "Captions", "Render jobs"],
+  "deliverable_brief": "A cut plan with timestamps and captions; a rendered clip only when a qualified video tool produces one.",
+  "required_work_capabilities": ["video.render"],
+  "optional_work_capabilities": ["media.upload"]
+}
