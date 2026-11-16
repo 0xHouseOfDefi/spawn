@@ -4,7 +4,7 @@
 
 This repository runs two workflows on pull requests, both defined in [`.github/workflows`](../.github/workflows):
 
-- `checks`: Backroom catalogue and proposal validation, the agent runtime's tests and typecheck, the protocol package, the clipper's unit tests, the Signal Below example, and the token SDK's checks.
+- `checks`: Backroom catalogue and proposal validation, mod validation, the agent runtime's tests and typecheck, the protocol package, the clipper's unit tests, the Signal Below example, and the token SDK's checks.
 - `dco`: confirms every commit in the pull request has a `Signed-off-by` line.
 
 Both use the `pull_request` trigger, never `pull_request_target`. They run with a read-only `GITHUB_TOKEN`, use no repository secrets, and install dependencies with `npm ci --ignore-scripts`. Pull requests from first-time contributors wait for a maintainer to approve the run.

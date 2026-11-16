@@ -573,6 +573,35 @@
                     "type": "string",
                     "const": "clips"
                   },
+                  "mods": {
+                    "maxItems": 8,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "maxLength": 64,
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                        },
+                        "version": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 10000
+                        },
+                        "hash": {
+                          "type": "string",
+                          "pattern": "^sha256:[a-f0-9]{64}$"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "hash"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
                   "tool": {
                     "type": "string",
                     "enum": [

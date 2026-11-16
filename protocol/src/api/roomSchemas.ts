@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { roomMods } from "./modRefSchemas";
 import { task } from "./schemas";
 import { memeLookCatalogue } from "./memeLookSchemas";
 const s = z.string(),
@@ -46,6 +47,7 @@ export const config = z.discriminatedUnion("kind", [
   z.object({
     kind: z.literal("video"),
     workspace_mode: z.literal("clips").optional(),
+    mods: roomMods.optional(),
     tool: z.enum(["clips", "memes", "affiliate"]).optional(),
     meme_looks: memeLookCatalogue.optional(),
     storyboard: s,

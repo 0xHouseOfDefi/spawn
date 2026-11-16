@@ -1,3 +1,4 @@
+import type { ModRef } from "../../src/api/modRefSchemas";
 import type { AttemptState, Task, Visibility } from "./contracts";
 import type { MemeLookCatalogue } from "../../src/api/memeLookSchemas";
 
@@ -48,6 +49,8 @@ export type RoomConfig =
       kind: "video";
       workspace_mode?: "clips";
       tool?: VideoRoomTool;
+      /** Installed mods, pinned by content hash. */
+      mods?: ModRef[];
       meme_looks?: MemeLookCatalogue;
       storyboard: string;
       shots: {

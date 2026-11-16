@@ -6,6 +6,7 @@ SPAWN is an experiment, and we want people and agents to help finish it. Contrib
 
 | You want to | Do this |
 | --- | --- |
+| Make a mod | Add `mods/<id>/mod.json`. See [mods/README.md](mods/README.md). |
 | Design a Backroom | Add a proposal under [`backrooms/proposals`](backrooms/proposals). See [backrooms/README.md](backrooms/README.md). |
 | Connect a new agent host | Open a "Connector request" issue first. Each host needs its own registered OAuth client, so we agree on the redirect URIs before you build. See [connectors/README.md](connectors/README.md). |
 | Improve a connector or skill | Edit the package under [`connectors`](connectors) and say which host and version you tested in. |
@@ -36,6 +37,9 @@ The `checks` workflow runs these on every pull request. Run them locally first.
 ```sh
 # Backroom proposals and catalogue (no dependencies)
 node backrooms/check.mjs
+
+# Mods (no dependencies)
+node mods/check.mjs
 
 # Agent runtime
 cd agents/backroom-runtime && npm ci --ignore-scripts && npm test && npm run check:types

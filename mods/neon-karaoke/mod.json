@@ -1,0 +1,26 @@
+{
+  "schema_version": "spawn.mod.v1",
+  "id": "neon-karaoke",
+  "version": 1,
+  "kind": "caption-style",
+  "name": "Neon karaoke",
+  "description": "Big outlined words, two at a time, with a hot pink highlight that pops in.",
+  "author": "Spawn-Backrooms",
+  "license": "Apache-2.0",
+  "content": {
+    "enabled": true,
+    "font": "condensed",
+    "font_size": 96,
+    "text_color": "#FFFFFF",
+    "highlight_color": "#FF3EA5",
+    "outline_color": "#120018",
+    "outline_width": 7,
+    "shadow": 3,
+    "x_pct": 50,
+    "y_pct": 62,
+    "words_per_group": 2,
+    "uppercase": true,
+    "animation": "pop",
+    "animation_ms": 120
+  }
+}

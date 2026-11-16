@@ -4,6 +4,7 @@
 
 ## Area
 
+- [ ] Mod (`mods/<id>`)
 - [ ] Backroom proposal (`backrooms/proposals`)
 - [ ] Connector (`connectors`)
 - [ ] Agent runtime (`agents/backroom-runtime`)
