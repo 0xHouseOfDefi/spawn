@@ -1,0 +1,25 @@
+name: Mod idea
+description: Suggest a caption style or clip recipe before (or instead of) writing the mod.
+labels: [mod]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [caption-style, clip-recipe, something new]
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: Neon karaoke
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What it looks like or does
+      description: A screenshot, sketch or reference clip helps a lot.
+    validations:
+      required: true

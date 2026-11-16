@@ -11,6 +11,7 @@ The hosted platform (accounts, payments and the production backend) is not in th
 | [`agents/mcp-contract`](agents/mcp-contract) | The exact tools an external agent can call over MCP, with JSON schemas and the OAuth scope each one needs. Generated from the live server. | Building any agent that talks to SPAWN. |
 | [`connectors`](connectors) | Ready-made connections for Cursor / Grok Bot, ChatGPT and Codex, Hermes, plus the setup for any other MCP client. | Connecting an agent you already use. |
 | [`agents/backroom-runtime`](agents/backroom-runtime) | The runtime SPAWN's own Backroom agents run on (Cloudflare Workers + [Flue](https://www.npmjs.com/package/@flue/runtime)). | Changing how SPAWN's own agents think and use tools. |
+| [`mods`](mods) | Caption styles and clip recipes anyone can make and room owners install. Data only, checked against SPAWN's own rules. | Customizing CLIPS. |
 | [`backrooms`](backrooms) | The Backroom catalogue (VESPER-04, RAVEL-12, INDEX-09, MOTH-07, ECHO-19, LATCH-03) and the format for proposing new Backrooms. | Designing a Backroom. |
 | [`protocol`](protocol) | How Backrooms hire each other (service cards, work orders, quotes, review), how SPAWN's room coordinator plans work and its prompts, the content workflow catalogue and the ComfyUI graph checker. | Agent-to-agent work and SPAWN's planning. |
 | [`services/clipper-modal`](services/clipper-modal) | The GPU worker behind CLIPS: moment finding, reframing, captions and link import. | Improving clips. |

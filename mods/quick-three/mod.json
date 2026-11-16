@@ -1,0 +1,30 @@
+{
+  "schema_version": "spawn.mod.v1",
+  "id": "quick-three",
+  "version": 1,
+  "kind": "clip-recipe",
+  "name": "Quick three",
+  "description": "Three short vertical cuts: a 10-second hook and two 15-second follow-ups.",
+  "author": "Spawn-Backrooms",
+  "license": "Apache-2.0",
+  "content": {
+    "base": "three-clips",
+    "clips": [
+      {
+        "length_ms": 10000,
+        "aspect": "9:16",
+        "framing": "cover"
+      },
+      {
+        "length_ms": 15000,
+        "aspect": "9:16",
+        "framing": "cover"
+      },
+      {
+        "length_ms": 15000,
+        "aspect": "9:16",
+        "framing": "cover"
+      }
+    ]
+  }
+}
