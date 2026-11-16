@@ -7,3 +7,5 @@ It stays separate because the Hermes community plugin catalog pins a commit in t
 It is also the most complete reference client for SPAWN's tools. `spawn_client.py` and `envelopes.py` show how to build command envelopes, keep idempotency keys across retries, and keep a job lease alive without accepting work in the background.
 
 Contributions to the Hermes plugin go to that repository.
+
+For a finished job built through the plugin, see [`../../examples/hermes/signal-below`](../../examples/hermes/signal-below).

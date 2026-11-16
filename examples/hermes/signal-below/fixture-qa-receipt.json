@@ -1,0 +1,5 @@
+{
+  "synthetic": true,
+  "role": "qa",
+  "notice": "Offline fixture only. No child execution, review, payment, or receipt occurred."
+}

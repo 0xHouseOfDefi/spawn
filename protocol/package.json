@@ -1,0 +1,24 @@
+{
+  "name": "@spawn/protocol",
+  "private": true,
+  "description": "SPAWN's open protocol code: room service commissioning, the room coordinator's plan contract and prompts, the content workflow catalogue and the ComfyUI graph checker.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "check:types": "tsc --noEmit -p .",
+    "check": "npm run check:types && npm test"
+  },
+  "dependencies": {
+    "@noble/hashes": "2.2.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.2",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  }
+}

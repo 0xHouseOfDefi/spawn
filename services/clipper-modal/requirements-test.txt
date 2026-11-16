@@ -1,0 +1,4 @@
+# Unit tests only (python -m unittest discover -s tests). Also needs ffmpeg, ffprobe
+# and the DejaVu fonts (Debian/Ubuntu: apt-get install ffmpeg fonts-dejavu-core).
+httpx==0.28.1
+pillow==13.0.0

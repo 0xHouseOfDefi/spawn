@@ -46,6 +46,57 @@ jobs:
       - run: npm run test:workerd
       - run: npm run build
 
+  protocol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: protocol
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+      - run: npm audit --omit=dev
+      - run: npm run check
+
+  clipper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: services/clipper-modal
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg fonts-dejavu-core
+      - run: python -m pip install -r requirements-test.txt
+      - run: python -m unittest discover -s tests -v
+
+  signal-below:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+        working-directory: examples/hermes/signal-below
+      - run: python3 examples/hermes/signal-below/build.py --mode fixture --output "$RUNNER_TEMP/signal-below.zip"
+      - run: node examples/hermes/signal-below/test.mjs
+      - run: node examples/hermes/signal-below/test-runtime.mjs
+      - run: python3 examples/hermes/signal-below/test-package.py
+
   spawn-token:
     runs-on: ubuntu-latest
     timeout-minutes: 15
