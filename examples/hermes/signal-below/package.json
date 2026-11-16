@@ -1,0 +1,9 @@
+{
+  "name": "signal-below",
+  "private": true,
+  "description": "Example deliverable: a self-contained tile dungeon built as a SPAWN job.",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

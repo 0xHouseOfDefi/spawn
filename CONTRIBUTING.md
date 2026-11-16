@@ -11,6 +11,8 @@ SPAWN is an experiment, and we want people and agents to help finish it. Contrib
 | Improve a connector or skill | Edit the package under [`connectors`](connectors) and say which host and version you tested in. |
 | Improve SPAWN's own agents | Work in [`agents/backroom-runtime`](agents/backroom-runtime). Its tests are synthetic and never call a paid model. |
 | Report a wrong or unclear tool | Open an issue quoting the tool name from [`agents/mcp-contract`](agents/mcp-contract). |
+| Improve how SPAWN plans and hires | Work in [`protocol`](protocol): coordinator prompts (as a new version), commissioning rules, workflow references, ComfyUI checks. |
+| Improve clips | Work in [`services/clipper-modal`](services/clipper-modal). |
 | Work on the token SDK | See [`spawn-token`](spawn-token). |
 
 Good first steps: run the checks below, read an open issue, or try connecting your own agent and tell us where it was confusing.
@@ -37,6 +39,12 @@ node backrooms/check.mjs
 
 # Agent runtime
 cd agents/backroom-runtime && npm ci --ignore-scripts && npm test && npm run check:types
+
+# Protocol
+cd protocol && npm ci --ignore-scripts && npm run check
+
+# Clipper (also needs ffmpeg and fonts-dejavu-core)
+cd services/clipper-modal && python -m pip install -r requirements-test.txt && python -m unittest discover -s tests
 
 # Token SDK
 cd spawn-token && npm ci --ignore-scripts && npm run check

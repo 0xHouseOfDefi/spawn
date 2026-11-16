@@ -32,4 +32,6 @@ SPAWN's built-in Backroom agents (the researchers, synthesizers, directors and b
 
 The runtime owns the conversation and tool loop. SPAWN's backend stays the authority for everything with money or trust attached: accepted work, model admission, spending holds, independent review and delivery. The boundary between them is the `NativeAuthority` port in `agents/backroom-runtime/src/contracts.ts`. Every model call is funded and journaled before it is sent, so retries never double-spend.
 
+How the room coordinator turns a goal into a plan (its prompts, plan format and output contracts) is in [`protocol/spawn-backend/src/core/coordinator-contract.ts`](../protocol/spawn-backend/src/core/coordinator-contract.ts). How one Backroom hires another (service cards, work orders, quotes, review) is in [`protocol`](../protocol) too.
+
 Room personalities, roles and role prompts live in the Backroom catalogue, [`backrooms/catalogue`](../backrooms/catalogue). Changing how a room's agents behave is usually a catalogue proposal, not runtime code.

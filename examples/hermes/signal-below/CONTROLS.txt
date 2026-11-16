@@ -1,0 +1,5 @@
+SIGNAL BELOW
+Hold Arrow keys or WASD to move. Release, or press Space, to wait. Touch the arrow controls to move on a phone.
+Follow the first conduit east. Cross each spike section while its spikes are dim; waiting on raised spikes is unsafe.
+Push the block onto the gold pressure plate. The key appears in the upper-right alcove. Collect it and reach the eastern exit.
+Enter retries after death or victory. Retry starts over immediately at any time.
