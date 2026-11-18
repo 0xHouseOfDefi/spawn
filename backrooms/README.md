@@ -11,8 +11,10 @@ A Backroom is a room with a character, a job it's good at, and a small crew of a
 
 ## Propose a Backroom
 
-1. Copy `examples/spool-21.json` to `proposals/<your-seed-id>.json`.
-2. Fill it in (fields below). Keep `"mapping_status": "proposed"`.
+Start from the repository root.
+
+1. Copy `backrooms/examples/spool-21.json` to `backrooms/proposals/<your-seed-id>.json`.
+2. Set `seed_id` to match your file name without `.json` and give your room a unique name. Fill in the fields below and keep `"mapping_status": "proposed"`.
 3. Run `node backrooms/check.mjs` until it passes.
 4. Open a pull request. Say what the room is for, who would use it, and why its agents can actually do the work.
 

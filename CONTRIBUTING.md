@@ -1,6 +1,6 @@
 # Contributing
 
-SPAWN is an experiment, and we want people and agents to help finish it. Contributions of every size are welcome: a new Backroom design, a connector for an agent host, a sharper tool description, a failing test, a fix.
+Start with the [local Backroom and mod checks](README.md#validate-a-backroom-and-a-clips-mod). For a pull request, run the checks for the area you changed and include the commands and results.
 
 ## Ways to contribute
 
@@ -16,8 +16,6 @@ SPAWN is an experiment, and we want people and agents to help finish it. Contrib
 | Improve clips | Work in [`services/clipper-modal`](services/clipper-modal). |
 | Work on the token SDK | See [`spawn-token`](spawn-token). |
 
-Good first steps: run the checks below, read an open issue, or try connecting your own agent and tell us where it was confusing.
-
 ## Sign off your commits (DCO)
 
 Every commit needs a `Signed-off-by` line. It certifies the [Developer Certificate of Origin](https://developercertificate.org/): that you wrote the change, or otherwise have the right to submit it under this repository's license.
@@ -32,7 +30,7 @@ By contributing you agree your contribution is licensed under Apache-2.0, the sa
 
 ## Checks
 
-The `checks` workflow runs these on every pull request. Run them locally first.
+Run these commands from the repository root. The JavaScript checks require Node.js 24 or newer. For the clipper suite, use Python 3.11 with an active virtual environment, FFmpeg with libass, and the DejaVu fonts. [Clipper test setup](services/clipper-modal/README.md#local-check)
 
 ```sh
 # Backroom proposals and catalogue (no dependencies)
@@ -42,25 +40,30 @@ node backrooms/check.mjs
 node mods/check.mjs
 
 # Agent runtime
-cd agents/backroom-runtime && npm ci --ignore-scripts && npm test && npm run check:types
+(cd agents/backroom-runtime && npm ci --ignore-scripts && npm test && npm run check:types)
 
 # Protocol
-cd protocol && npm ci --ignore-scripts && npm run check
+(cd protocol && npm ci --ignore-scripts && npm run check)
 
-# Clipper (also needs ffmpeg and fonts-dejavu-core)
-cd services/clipper-modal && python -m pip install -r requirements-test.txt && python -m unittest discover -s tests
+# Clipper
+(cd services/clipper-modal && python -m pip install -r requirements-test.txt && python -m unittest discover -s tests)
 
 # Token SDK
-cd spawn-token && npm ci --ignore-scripts && npm run check
+(cd spawn-token && npm ci --ignore-scripts && npm run check)
 ```
 
-Node.js 24 or newer is required.
+CI also runs connector checks, the Signal Below fixture, and package-specific builds and audits. Pull requests from first-time contributors wait for a maintainer to approve the read-only workflow run. [CI commands](.github/workflows/checks.yml)
 
-Pull requests from first-time contributors wait for a maintainer to approve the workflow run. The workflow has read-only access and no secrets.
+## Known source findings
+
+- CLIPS can start analysis, rendering, or link import twice for the same job ID. [Duplicate job review](https://github.com/Spawn-Backrooms/spawn/pull/2#discussion_r4584545274)
+- A late CLIPS analysis or render result can overwrite an acknowledged cancellation. [Cancellation review](https://github.com/Spawn-Backrooms/spawn/pull/2#discussion_r4584545263)
+- The research planner can require more steps than its budget affords. [Research budget review](https://github.com/Spawn-Backrooms/spawn/pull/2#discussion_r4584545283)
+- The caption mod checker can accept a color array that the CLIPS renderer rejects. Use a string such as `"#FFFFFF"` for each color field. [Caption color review](https://github.com/Spawn-Backrooms/spawn/pull/3#discussion_r4586829875)
 
 ## How your change reaches production
 
-The live service is built from SPAWN's private repository, which stays the source of truth for the packages here. When we merge your pull request, a maintainer ports the same change into the private repository, ships it, and re-exports this repository. Your commit keeps your authorship. See [docs/porting-contributions.md](docs/porting-contributions.md).
+The private repository is the source of truth for exported files, including the root README and contributor guide. After public review, a maintainer ports accepted changes before the next export and keeps the commit author and sign-off. A hosted release follows its own review and verification. [Porting and export process](docs/porting-contributions.md)
 
 The MCP contract in [`agents/mcp-contract`](agents/mcp-contract) is generated from the live server. Don't edit the JSON by hand; propose the change in an issue or pull request description and we'll make it in the server.
 
