@@ -40,7 +40,8 @@ function captionStyle(errors, at, c) {
   rule(typeof c.enabled === "boolean", "enabled", "true or false");
   rule(["sans", "condensed", "mono"].includes(c.font), "font", '"sans", "condensed" or "mono"');
   rule(int(c.font_size, 40, 112), "font_size", "a whole number from 40 to 112");
-  for (const field of ["text_color", "highlight_color", "outline_color"]) rule(COLOR.test(c[field] ?? ""), field, 'a color like "#FF3EA5"');
+  for (const field of ["text_color", "highlight_color", "outline_color"])
+    rule(typeof c[field] === "string" && COLOR.test(c[field]), field, 'a color like "#FF3EA5"');
   rule(int(c.outline_width, 0, 10), "outline_width", "a whole number from 0 to 10");
   rule(int(c.shadow, 0, 6), "shadow", "a whole number from 0 to 6");
   rule(num(c.x_pct, 10, 90), "x_pct", "from 10 to 90 (percent across)");
