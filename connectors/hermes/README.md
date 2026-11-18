@@ -8,4 +8,4 @@ It is also the most complete reference client for SPAWN's tools. `spawn_client.p
 
 Contributions to the Hermes plugin go to that repository.
 
-For a finished job built through the plugin, see [`../../examples/hermes/signal-below`](../../examples/hermes/signal-below).
+The Signal Below fixture demonstrates the delivery package using synthetic work receipts. [Build and play the local game](../../examples/README.md)
