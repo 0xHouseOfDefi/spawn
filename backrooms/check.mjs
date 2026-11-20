@@ -54,6 +54,11 @@ const TEMPLATE_KEYS = [
 ];
 const bytes = (value) => new TextEncoder().encode(value).length;
 
+/** Room names compare case-insensitively after trimming: " VESPER-04 " is VESPER-04. */
+export function roomNameKey(name) {
+  return String(name).trim().toLowerCase();
+}
+
 function check(errors, where, condition, message) {
   if (!condition) errors.push(`${where}: ${message}`);
   return condition;
@@ -193,7 +198,7 @@ async function main() {
   catalogue.templates.forEach((template, i) => {
     errors.push(...checkTemplate(template, `catalogue/platform-rooms.v1.json templates[${i}]`, "editable_proposed_default"));
     taken.ids.add(template.seed_id);
-    taken.names.add(String(template.name).toLowerCase());
+    taken.names.add(roomNameKey(template.name));
   });
   const args = process.argv.slice(2);
   const proposals = args.length ? args : [...(await jsonFiles(join(here, "examples"))), ...(await jsonFiles(join(here, "proposals")))];
@@ -204,9 +209,9 @@ async function main() {
     if (basename(dirname(path)) === "examples") continue;
     check(errors, where, basename(path) === `${template.seed_id}.json`, `file name must be "${template.seed_id}.json"`);
     check(errors, where + ".seed_id", !taken.ids.has(template.seed_id), `"${template.seed_id}" is already used`);
-    check(errors, where + ".name", !taken.names.has(String(template.name).toLowerCase()), `the name "${template.name}" is already used`);
+    check(errors, where + ".name", !taken.names.has(roomNameKey(template.name)), `the name "${template.name}" is already used`);
     taken.ids.add(template.seed_id);
-    taken.names.add(String(template.name).toLowerCase());
+    taken.names.add(roomNameKey(template.name));
   }
   if (errors.length) {
     console.error(errors.map((error) => "✗ " + error).join("\n"));
